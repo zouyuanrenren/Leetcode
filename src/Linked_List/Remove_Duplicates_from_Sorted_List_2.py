@@ -11,7 +11,7 @@ The basic idea is to add only node that is different from its previous one and d
 1. add a temp node before head with a different value from head
 2. for each node, if it is the same as its previous node, then skip
 3. otherwise, if it has a next node and has the same value, then skip
-4. otherwise
+4. otherwise, add it
 '''
 
 # Definition for singly-linked list.
