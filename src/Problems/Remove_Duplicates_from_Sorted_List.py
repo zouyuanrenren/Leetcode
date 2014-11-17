@@ -11,6 +11,14 @@ Given 1->1->2, return 1->2.
 Given 1->1->2->3->3, return 1->2->3.
 '''
 
+'''
+The basic idea is:
+1. going through nodes one by one:
+2. if a node has the same value as its next node, skip the next node;
+3. otherwise, proceeds; 
+'''
+
+
 # Definition for singly-linked list.
 class ListNode:
     def __init__(self, x):

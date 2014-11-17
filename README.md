@@ -4,5 +4,6 @@ Leetcode
 Leetcode solutions
 
 This is a Python project for Leetcode solutions.
-This project is still WIP.
+All solutions are accepted in Leetcode OJ.
 Solutions are not guaranteed to be optimal.
+This project is still WIP.

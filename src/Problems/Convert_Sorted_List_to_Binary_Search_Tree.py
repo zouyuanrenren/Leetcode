@@ -8,7 +8,7 @@ Created on 16 Nov 2014
 Given a singly linked list where elements are sorted in ascending order, convert it to a height balanced BST.
 
 the basic idea is to construct the tree in an bottom-up manner
-the tree can be constructed with inorder search
+the tree can be constructed with in-order search
 when the size of the tree is known, one always knows how many nodes need to be processed to build a sub-tree
 '''
 

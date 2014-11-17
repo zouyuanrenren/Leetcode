@@ -17,6 +17,13 @@ Given m, n satisfy the following condition:
 1 \leq m \leq n \leq length of list.
 '''
 
+'''
+Basic idea:
+1. locate the m node
+2. reverse the next n-m node
+3. re-connect
+'''
+
 # Definition for singly-linked list.
 class ListNode:
     def __init__(self, x):
