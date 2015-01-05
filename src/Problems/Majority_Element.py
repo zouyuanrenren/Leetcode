@@ -3,6 +3,10 @@ Created on 2 Jan 2015
 
 @author: Yuan
 '''
+'''
+easiest solution is to use a dic to maintain the count of all elements.
+Whenever a count exceeds the majority, return the element
+'''
 class Solution:
     # @param num, a list of integers
     # @return an integer

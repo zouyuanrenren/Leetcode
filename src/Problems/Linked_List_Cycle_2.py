@@ -14,7 +14,7 @@ Can you solve it without using extra space?
 Basic idea is to use two pointers:
 1. a fast pointer;
 2. a slow pointer:
-3. when the two pointer meets, the head-2-slow distance = slow-2-cycle-begin-node distance
+3. when the two pointer meets, the head and slow will have the same distance to the beginning of the cycle
 '''
 
 # Definition for singly-linked list.

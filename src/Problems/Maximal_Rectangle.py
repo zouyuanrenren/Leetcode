@@ -3,6 +3,9 @@ Created on 2 Jan 2015
 
 @author: Yuan
 '''
+'''
+This problem can be solved by using the solution in Largest Rectangle in Histogram
+'''
 class Solution:
     # @param matrix, a list of lists of 1 length string
     # @return an integer
