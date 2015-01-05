@@ -3,6 +3,14 @@ Created on 1 Jan 2015
 
 @author: Yuan
 '''
+'''
+Basic stack problem.
+Idea is, going throught the input string:
+    1. when encounter operator, pop the operands and push the results back
+    2. when encounter operand, push it into the stack
+    3. when string is empty, pop the stack to get the result
+only thing that needs attention is that, some operators are not symmetric. So remember the order.
+'''
 class Solution:
     # @param tokens, a list of string
     # @return an integer

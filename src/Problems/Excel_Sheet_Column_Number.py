@@ -13,4 +13,4 @@ class Solution:
             num += ord(c)-ord("A") +1
         return num
     
-print Solution().titleToNumber("BA")
+print Solution().titleToNumber("BBA")

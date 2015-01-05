@@ -3,6 +3,10 @@ Created on 30 Dec 2014
 
 @author: Yuan
 '''
+'''
+Pretty much the same as Combination Sum.
+The only difference is that, when looking for the next element to add into the current solution, one should find the next DIFFERENT one
+'''
 class Solution:
     # @param candidates, a list of integers
     # @param target, integer

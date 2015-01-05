@@ -3,39 +3,30 @@ Created on 1 Jan 2015
 
 @author: Yuan
 '''
+
+'''
+A binary search solution is available:
+1. if mid < mid +1, there must be peak in the second half.
+2. if mid > mid +1, there must be peak in the first half.
+'''
 class Solution:
     # @param num, a list of integer
     # @return an integer
     def findPeakElement(self, num):
-        return self.peakIn(num, 0, len(num))
-    
-    def peakIn(self, num, start, end):
-        if start >= end:
-            return -1
-        middle = (end-start)/2+start
-        if middle == 0 or num[middle] > num[middle-1]:
-            if middle == len(num)-1 or num[middle] > num[middle+1]:
-                return middle
+        if len(num) == 0:
+            return None
+        low = 0
+        high = len(num)-1
+        while low <= high:
+            mid = (low+high)/2
+            if mid == high:
+                return mid
+            if num[mid] < num[mid+1]:
+                low = mid+1
             else:
-                first = self.peakIn(num, start, middle-1)
-                if first > -1:
-                    return first
-                else:
-                    return self.peakIn(num, middle+1, end)
-        else:
-            if middle == len(num) -1 or num[middle] > num[middle+1]:
-                first = self.peakIn(num, start, middle)
-                if first > -1:
-                    return first
-                else:
-                    return self.peakIn(num, middle+2, end)
-            else:
-                first = self.peakIn(num, start, middle)
-                if first > -1:
-                    return first
-                else:
-                    return self.peakIn(num, middle+1, end)
-                        
+                high = mid
+        return low
+                         
 
-print Solution().findPeakElement([1,2,3,4,3])
+print Solution().findPeakElement([2,3,4,5])
 

@@ -3,6 +3,11 @@ Created on 30 Dec 2014
 
 @author: Yuan
 '''
+'''
+This is a typical search problem. Either depth-first search or breadth-first search will work.
+When using breadth-first search, one can emply a queue to maintain the nodes to be processed.
+Another hashmap is needed to maintain the clone of all nodes.
+'''
 # Definition for a undirected graph node
 class UndirectedGraphNode:
     def __init__(self, x):

@@ -3,6 +3,12 @@ Created on 1 Jan 2015
 
 @author: Yuan
 '''
+'''
+This problem can be solved with two pointers.
+1. First connect the tail of one list to the tail of another
+2. If the two lists have intersection, then the connected list will contain a cycle. And the intersection begins where the cycle begins
+3. Otherwise, the combined list will not have a cycle.
+'''
 # Definition for singly-linked list.
 class ListNode:
     def __init__(self, x):

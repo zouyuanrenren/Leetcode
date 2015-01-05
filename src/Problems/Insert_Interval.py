@@ -3,6 +3,15 @@ Created on 1 Jan 2015
 
 @author: Yuan
 '''
+'''
+the following solution finds:
+    1. the first interval that begins no earlier than the start of the new interval
+    2. the first interval that begins no earlier than the end of the new interval
+    3. then we can combine them together
+    
+An alternative is to treat it as a two list merge sort problem.
+One list the intervals, the other is the [newInterval].
+'''
 # Definition for an interval.
 class Interval:
     def __init__(self, s=0, e=0):

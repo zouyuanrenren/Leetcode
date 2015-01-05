@@ -12,7 +12,7 @@ Output: 7 -> 0 -> 8
 '''
 
 '''
-This question is relatively simple, just add the two numbers on each digit and add the addional 1 to the next digit if needed.
+This question is relatively simple, just add the two numbers on each digit and add the carry to the next digit if needed.
 Need to be careful when one of the list ends before the other.
 '''
 
@@ -27,41 +27,33 @@ class Solution:
     def addTwoNumbers(self, l1, l2):
         result = ListNode(0)
         current = result
-        add = 0
-        while l1 != None and l2 != None:
-            val = l1.val + l2.val +add            
-            newnode = ListNode(val % 10)
-            current.next = newnode
-            current = newnode
-            add = val / 10
-            l1 = l1.next
-            l2 = l2.next
-        leftover = None
-        if l1 == None:
+        carry = 0
+        while l1 != None or l2 != None or carry:
+            if l1 != None:
+                n1 = l1.val
+                l1 = l1.next
+            else:
+                n1 = 0
             if l2 != None:
-                leftover = l2
-        else:
-            leftover = l1
-        while leftover != None:
-            val = leftover.val + add
+                n2 = l2.val
+                l2 = l2.next
+            else:
+                n2 = 0
+            val = n1 + n2 + carry
             newnode = ListNode(val % 10)
             current.next = newnode
             current = newnode
-            add = val / 10
-            leftover = leftover.next
-        if add == 1:
-            newnode = ListNode(1)
-            current.next = newnode
+            carry = val / 10
         return result.next
     
-list = [1]
+list = [5,5,5]
 head1 = ListNode(0)
 tail = head1
 for item in list:
     tail.next = ListNode(item)
     tail = tail.next
     
-list = [9,9,9]
+list = [5,5,5]
 head2 = ListNode(0)
 tail = head2
 for item in list:

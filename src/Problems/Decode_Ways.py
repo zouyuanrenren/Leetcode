@@ -3,6 +3,18 @@ Created on 30 Dec 2014
 
 @author: Yuan
 '''
+'''
+need to consider a few corner cases.
+We use ways[i] to represent the number of ways for s[:i+1]:
+1. first consider ways[0]
+    = 0  if s[0] = 0
+    = 1 otherwise
+2. then consider ways[1]
+    = 0 if s[0:2] > 20
+    = 2 if s[0:2] between 11, 26
+    = 1 otherwise
+3. then consider ways[i]
+'''
 class Solution:
     # @param s, a string
     # @return an integer

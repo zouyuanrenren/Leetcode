@@ -16,5 +16,5 @@ class Solution:
 
 sol = Solution()
 
-for i in range(100):
+for i in range(28):
     print i, sol.convertToTitle(i)

@@ -3,6 +3,18 @@ Created on 30 Dec 2014
 
 @author: Yuan
 '''
+
+'''
+In order to avoid TLE, a reduction to 2Sum can be employed.
+Particularly, maintain the dictionary dict = {ni+nj:[[i,j]]}
+Then use 2 pointers:
+1. p1 in range(1,len(num))[::-1], n1 = num[p1] as the first different element
+2. p2 in range(0,p1)[::-1], n2 = num[p2] as the first different element
+3. for each n1+n2, if target-(n1+n2) in dict, then 
+    for each [i,j] in dict[target - (n1+n2)]: if j < p2, then we find a solution
+'''
+
+
 class Solution:
     # @return a list of lists of length 4, [[val1,val2,val3,val4]]
     
@@ -28,6 +40,8 @@ class Solution:
                 self.NSum(num, target-num[i], N-1, i+1, result, current+[num[i]])
             else:
                 return
+
+    
     
     # this solution is slightly simpler with reduction to 2-sum.        
     def fourSum(self, num, target):

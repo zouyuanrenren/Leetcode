@@ -3,6 +3,15 @@ Created on 30 Dec 2014
 
 @author: Yuan
 '''
+'''
+One of the easy problems:
+1. split the two version numbers by "."
+2. append the shorter one with trailing 0s
+3. compare each segment
+
+step 2 can be avoided. But in that case after step 3 there might be lefeovers from one list.
+    depending on which one is left, logics can be different.
+'''
 class Solution:
     # @param version1, a string
     # @param version2, a string

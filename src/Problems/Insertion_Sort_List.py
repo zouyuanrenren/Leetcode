@@ -8,7 +8,7 @@ Created on 16 Nov 2014
 Sort a linked list using insertion sort.
 
 The basic idea is:
-1. use a tail-current pair to separate the sorted and unsorted part of the list;
+1. use a tail-current 2-pointer pair to separate the sorted and unsorted part of the list;
 2. if current >= tail, then move on to the next node
 3. else, need to insert current into head ->...-> tail part
 '''
@@ -33,8 +33,6 @@ class Solution:
         while current != None:
             if current.val < tail.val:
                 pre = newhead
-#                 if pre.next != None and pre.next.val > current.val:
-#                     pre = newhead
                 while pre.next.val < current.val:
                     pre = pre.next
                 newcurrent = current.next

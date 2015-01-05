@@ -3,6 +3,16 @@ Created on 1 Jan 2015
 
 @author: Yuan
 '''
+'''
+This problems requies O(1) time for next() and hasNext(). This requires the tree to be serialised in-order.
+This can be done with a stack and a list:
+1. push the root into the stack
+2. while the stack is non-empty, pop the top element, add it into the list, and push its right sub-tree node into the stack
+
+Note that, when push a node into stack, one should push all the way down to its left-most sibling nodes
+
+by doing the above, the list will be a in-order serialisation of the tree
+'''
 # Definition for a  binary tree node
 class TreeNode:
     def __init__(self, x):
@@ -12,27 +22,35 @@ class TreeNode:
 
 class BSTIterator:
     
-    stack = []
-    
     # @param root, a binary search tree's root node
     def __init__(self, root):
+        self.stack = []
+        self.list = []
+        self.pointer = 0
         self.build(root)
     
     def build(self, root):
-        node = root
+        self.push(root)
+        while self.stack:
+            node = self.stack.pop()            
+            self.list.append(node.val)
+            self.push(node.right)
+    
+    def push(self, node):
         while node != None:
             self.stack.append(node)
             node = node.left
 
     # @return a boolean, whether we have a next smallest number
     def hasNext(self):
-        return len(self.stack) > 0
+        return self.pointer < len(self.list)
 
     # @return an integer, the next smallest number
     def next(self):
-        node = self.stack.pop()
-        self.build(node.right)
-        return node.val        
+        if self.pointer < len(self.list):
+            val = self.list[self.pointer]
+            self.pointer +=1
+            return val        
 
 # Your BSTIterator will be called like this:
 root = TreeNode(5)

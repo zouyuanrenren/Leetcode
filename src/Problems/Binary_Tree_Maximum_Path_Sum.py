@@ -30,7 +30,7 @@ we only need to compute the largest out of the above 4 for each node
     b. node + left sub-path with max sum
     c. node + right sub-path with max sum
 we only need to compute the largest out of the above 3 for each node, so that it can be used by its parent node
-3. hence we do with depth-first search
+3. hence we do with depth-first search and recursion
 '''
 
 
@@ -47,9 +47,9 @@ class Solution:
     def maxPathSum(self, root):
         if root == None:
             return 0
-        maxlist = []
+        maxlist = [None]
         self.maxsum(root,maxlist)
-        return max(maxlist)
+        return maxlist[0]
         
     def maxsum(self,root,maxlist):
         if root == None:
@@ -58,5 +58,5 @@ class Solution:
         rightmax = self.maxsum(root.right,maxlist)
         result = max(root.val,root.val+leftmax,root.val+rightmax)
         current = max(result,root.val+leftmax+rightmax)
-        maxlist.append(current)
+        maxlist[0] = current if maxlist[0] == None else max(current, maxlist[0])
         return result

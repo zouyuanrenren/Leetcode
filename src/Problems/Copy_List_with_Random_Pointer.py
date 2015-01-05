@@ -63,6 +63,7 @@ for item in list:
     tail.next = RandomListNode(item)
     tail.random = tail.next
     tail = tail.next
+tail.next = head
 
 sol = Solution()
 head = sol.copyRandomList(head.next)
