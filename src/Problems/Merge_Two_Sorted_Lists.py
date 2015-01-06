@@ -25,30 +25,27 @@ class Solution:
     # @param two ListNodes
     # @return a ListNode
     def mergeTwoLists(self, l1, l2):
-        if l1 == None:
-            return l2
-        else:
-            if l2 == None:
-                return l1
+        head = ListNode(0)
+        pre = head
+        while l1 != None and l2 != None:
+            if l1.val < l2.val:
+                pre.next = l1
+                l1 = l1.next
             else:
-                head = None
-                current = None
-                if l1.val < l2.val:
-                    head = l1
-                    current = l2
-                else:
-                    head = l2
-                    current = l1
-                pre = head
-                while pre.next != None and current != None:
-                    if pre.next.val < current.val:
-                        pre = pre.next
-                    else:
-                        next = pre.next
-                        pre.next = current
-                        pre = current
-                        current = next
-                else:
-                    if pre.next == None:
-                        pre.next = current
-            return head
+                pre.next = l2
+                l2 = l2.next
+            pre = pre.next
+        if l1 == None:
+            pre.next = l2
+        else:
+            pre.next = l1
+        return head.next
+
+l1 = ListNode(2)
+l2 = ListNode(1)
+
+sol = Solution()
+result = sol.mergeTwoLists(l1, l2)
+while result != None:
+    print result.val
+    result = result.next
