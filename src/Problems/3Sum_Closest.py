@@ -9,6 +9,8 @@ basic idea is same as 3Sum.
 in addition, maintain the current closest one
 for each sum found, update the closest one accordingly
 then proceed the pointer moving
+
+Slightly different from 3Sum, here we find the next different ni if a different way.
 '''
 
 class Solution:
@@ -20,25 +22,33 @@ class Solution:
         closest = sum(num[0:3])
         if closest > target:
             return closest
-        index1 = 0
-        while index1 < len(num) -2:
-            index2 = index1+1
-            index3 = len(num)-1
-            while index2 < index3:
-                SUM = num[index1]+num[index2]+num[index3]
+        p1 = 0
+        while p1 < len(num) -2:
+            p2 = p1+1
+            p3 = len(num)-1
+            while p2 < p3:
+                SUM = num[p1]+num[p2]+num[p3]
                 if abs(SUM-target) < abs(closest -target):
                     closest = SUM
                 if SUM == target:
                     return target
                 elif SUM > target:
-                    index3 -= 1
-                    while index2 < index3 and num[index3] == num[index3+1]:
-                        index3 -= 1
+                    p3 -= 1
+                    # find the next different n3
+                    while p2 < p3 and num[p3] == num[p3+1]:
+                        p3 -= 1
                 else:
-                    index2 +=1
-                    while index2 < index3 and num[index2] == num[index2-1]:
-                        index2 += 1
-            index1 += 1
-            while index1 < len(num)-2 and num[index1] == num[index1-1]:
-                index1 += 1
+                    p2 +=1
+                    # find the next different n2
+                    while p2 < p3 and num[p2] == num[p2-1]:
+                        p2 += 1
+            p1 += 1
+            # find the next different n1
+            while p1 < len(num)-2 and num[p1] == num[p1-1]:
+                p1 += 1
         return closest
+
+num = [1,2,4,8,16,32,64,128]
+target = 82
+
+print Solution().threeSumClosest(num, target)
