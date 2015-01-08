@@ -6,11 +6,13 @@ Created on 1 Jan 2015
 '''
 the following solution finds:
     1. the first interval that begins no earlier than the start of the new interval
+        the interval before can either be independent from the new interval, or be combined the new interval
     2. the first interval that begins no earlier than the end of the new interval
+        this interval can either be independent from the new interval, or be combined with the new interval
     3. then we can combine them together
     
 An alternative is to treat it as a two list merge sort problem.
-One list the intervals, the other is the [newInterval].
+One list is the intervals, the other is the [newInterval].
 '''
 # Definition for an interval.
 class Interval:

@@ -3,6 +3,9 @@ Created on 2 Jan 2015
 
 @author: Yuan
 '''
+'''
+key idea is to always check the next interval before adding the current interval.
+'''
 # Definition for an interval.
 class Interval:
     def __init__(self, s=0, e=0):

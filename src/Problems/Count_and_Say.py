@@ -7,7 +7,7 @@ Created on 4 Jan 2015
 One of the simple problems.
 only need to compare with the previous character:
 1. if the c == prec, then count ++
-2. else add int(count)+c into the string, and set count = 1
+2. else add int(count)+prec into the string, and set count = 1
 3. remember to deal with the trailing characters.
 '''
 class Solution:

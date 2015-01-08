@@ -5,7 +5,7 @@ Created on 5 Jan 2015
 '''
 '''
 This problem can be solved by using backtracking.
-The algorithm always remember how many remaining ( and ) need to be generated.
+The algorithm always remember how many remaining (s and )s need to be generated.
 1. start from ( = n and ) = n:
 2. if ( = 0:
     a. if ) = 0, then we found a solution

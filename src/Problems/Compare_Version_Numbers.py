@@ -9,7 +9,7 @@ One of the easy problems:
 2. append the shorter one with trailing 0s
 3. compare each segment
 
-step 2 can be avoided. But in that case after step 3 there might be lefeovers from one list.
+step 2 can be avoided. But in that case after step 3 there might be leftovers from one list.
     depending on which one is left, logics can be different.
 '''
 class Solution:

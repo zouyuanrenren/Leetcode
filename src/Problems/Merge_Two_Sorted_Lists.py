@@ -12,7 +12,9 @@ Merge two sorted linked lists and return it as a new list. The new list should b
 A simpler case of the Merge_k_Sorted_List
 
 The basic idea is:
-
+1. starting from an empty output list, and the beginning of the two input lists.
+2. comparing the current elements of the two input lists. Add the small one to the end of the output list.
+3. repeat-2 until one of the list is empty, then attach of the remaining of the other list to the end of the output.
 '''
 
 # Definition for singly-linked list.

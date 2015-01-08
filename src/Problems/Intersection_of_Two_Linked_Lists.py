@@ -5,9 +5,10 @@ Created on 1 Jan 2015
 '''
 '''
 This problem can be solved with two pointers.
-1. First connect the tail of one list to the tail of another
+1. First connect the tail of one list to the head of another
 2. If the two lists have intersection, then the connected list will contain a cycle. And the intersection begins where the cycle begins
 3. Otherwise, the combined list will not have a cycle.
+4. don't forget to detach the connection in step 1.
 '''
 # Definition for singly-linked list.
 class ListNode:

@@ -5,6 +5,7 @@ Created on 4 Jan 2015
 '''
 '''
 Recursive solution is trivial.
+
 An iterative solution can be developed by using a stack and a list:
 1. push the root into the stack
 2. when the stack is non-empty, pop the top element and push its left child into the stack

@@ -5,7 +5,7 @@ Created on 1 Jan 2015
 '''
 '''
 Basic stack problem.
-Idea is, going throught the input string:
+Idea is, going through the input string:
     1. when encounter operator, pop the operands and push the results back
     2. when encounter operand, push it into the stack
     3. when string is empty, pop the stack to get the result

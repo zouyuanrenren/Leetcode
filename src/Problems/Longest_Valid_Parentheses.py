@@ -6,7 +6,9 @@ Created on 1 Jan 2015
 '''
 A typical dynamic programming problem.
 Can also be solved with a stack.
-Solution uses a cache
+
+Solution uses a stack
+
 Solution2 uses DP
 '''
 class Solution:
