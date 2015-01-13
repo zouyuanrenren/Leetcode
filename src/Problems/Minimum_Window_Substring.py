@@ -3,6 +3,21 @@ Created on 2 Jan 2015
 
 @author: Yuan
 '''
+'''
+This problem utlises several techniques.
+1. To know that a substring include all characters in the patter, one need to remember how many times each character
+    appears in the substring and the pattern.
+    Hence a dictionary is needed, which preserves the number of appearance of each character in the pattern.
+2. To maintain the current string, a two-pointer pair can be used:
+    one pointer c indicates the next character to include.
+    another pointer nc indicates the next character to remove.
+3. Combine the above two:
+    when c is included into the current string, one needs to check how many times c have been included.
+    If all characters have been included for the respective times, then the candidate string is found.
+    Otherwise c moves forward.
+    When a candidate string is found, one need to check if nc can be removed.
+    If nc can be removed, then move nc forward and we will get a new candidate string.
+'''
 class Solution:
     # @return a string
     def minWindow(self, S, T):

@@ -3,6 +3,14 @@ Created on 2 Jan 2015
 
 @author: Yuan
 '''
+'''
+Next permutation can be found in the following way:
+1. from right to left, find the first index currentI who has a larger element to its right
+2. if currentI == -1, i.e., cannot be found, then the number is reversely sorted, we just need to sort it again.
+3. if currentI is found, go find the minimal larger element swap to its right.
+4. swap the position of currentI and swap.
+5. sort the part to the right of the original position of currentI.
+'''
 class Solution:
     # @param num, a list of integer
     # @return a list of integer

@@ -3,6 +3,11 @@ Created on 2 Jan 2015
 
 @author: Yuan
 '''
+'''
+The multiplication of two numbers can be computed by multiplying each pair of digits.
+Note that for the i-th digit in num2 and j-th digit in num1, the result should be on the (i+j)-th digit of the final results.
+Hence result[i+j] should be updated as carry + num2[i]*num1[j]+carry.
+'''
 class Solution:
     # @param num1, a string
     # @param num2, a string
@@ -15,7 +20,6 @@ class Solution:
         num1 = num1[::-1]
         num2 = num2[::-1]
         for i in range(len(num2)):
-#             sum = carry
             carry = 0
             for j in range(len(num1)):
                 sum=carry+int(num2[i])*int(num1[j])+int(result[i+j])
