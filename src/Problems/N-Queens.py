@@ -3,6 +3,14 @@ Created on 2 Jan 2015
 
 @author: Yuan
 '''
+'''
+This is a classic backtracking problem.
+An intermediate array "current" is needed to maintain the positions of queens on each row.
+Then the solution will look for the possible positions of queen in the next row.
+When the possibles are found for all rows, a solution is found.
+Otherwise, add the candidate position into "current" and continue for the next row.
+Once all possibilities for the next row are explored, remove the candidate from "current".
+'''
 class Solution:
     # @return a list of lists of string
     def solveNQueens(self, n):

@@ -10,7 +10,7 @@ Particularly, mDs[i][j] represnets the minimal distance between word1[:i] and wo
 Then obviously mDs[0] = [0,1,...]
 For mDs[i][j], there are following possibilities:
     1. by removing the trailing character in word1, hence = mDs[i-1][j]+1
-    2. by removing the trailing character in word2, hence = mDs[i][j-1]+1
+    2. by adding the trailing character in word2, hence = mDs[i][j-1]+1
     3. by replacing the last character in word1 with the one in word2, hence = mDs[i-1][j-1]+1
     4. when word1[i] == word2[j], and simply following previous steps, hence = mDs[i-1][j-1]
 We only need to find the minimal of the 4.

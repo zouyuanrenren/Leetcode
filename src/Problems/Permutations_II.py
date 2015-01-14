@@ -3,6 +3,12 @@ Created on 2 Jan 2015
 
 @author: Yuan
 '''
+'''
+Similar as the Permutation, using backtracking.
+The difference is that:
+In the Permutation, a candidate permutation can be appended with any remaining element.
+While in this problem, due to the existence of duplicated elements, a candidate permutation can only be appended with unique elements.
+'''
 class Solution:
     # @param num, a list of integer
     # @return a list of lists of integers

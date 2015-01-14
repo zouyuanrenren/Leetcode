@@ -3,6 +3,16 @@ Created on 2 Jan 2015
 
 @author: Yuan
 '''
+'''
+A typical backtracking problem.
+The general idea is:
+1. Maintain a list "current" for the partitioned palindromes, initially empty.
+1. Given a starting position for the next Palindrome (initially 0), find all possible ending positions.
+2. For each of the ending position, add the candidate parlindrome into "current",
+    and then recursively find the next palindrome from the next position of the ending position.
+    if the next position is beyond the input string, then a result is found.
+    remove the current candidate parlindrome from "current".
+'''
 class Solution:
     # @param s, a string
     # @return a list of lists of string

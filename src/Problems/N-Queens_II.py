@@ -3,6 +3,9 @@ Created on 2 Jan 2015
 
 @author: Yuan
 '''
+'''
+Similar as N-Queens, except that no solution is needed, but only the number.
+'''
 class Solution:
     # @return an integer
     def totalNQueens(self, n):

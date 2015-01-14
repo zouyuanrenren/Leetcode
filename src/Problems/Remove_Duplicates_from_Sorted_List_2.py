@@ -27,7 +27,6 @@ class Solution:
         if head == None or head.next == None:
             return head
         tail = ListNode(head.val-1)
-        tail.next = head
         newhead = tail
         
         pre = tail
@@ -42,12 +41,11 @@ class Solution:
                 tail.next = head
                 tail = head
                 head = head.next
-                pre = tail             
-        
-        tail.next = None
+                pre = tail
+        tail.next = None                    
         return newhead.next
     
-list = [1,1,2,2,3,3,4,4,4,5]
+list = [1,2,2]
 head = ListNode(0)
 tail = head
 for item in list:
