@@ -3,6 +3,12 @@ Created on 3 Jan 2015
 
 @author: Yuan
 '''
+'''
+A typical backtracking problem.
+Note that:
+1. the next IP fragment should be in [0, 255]
+2. if the next IP fragment is 0, it cannot be further expanded, because things like "01" is not valid.
+'''
 class Solution:
     # @param s, a string
     # @return a list of strings

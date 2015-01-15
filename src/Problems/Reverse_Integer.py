@@ -5,7 +5,9 @@ Created on 15 Jan 2015
 '''
 '''
 Relative simply problem.
-Only need to be careful about the negative numbers.
+Need to consider a few corner cases:
+1. x is negative.
+2. x is > 2^31-1.
 '''
 class Solution:
     # @return an integer

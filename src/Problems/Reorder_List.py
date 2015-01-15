@@ -48,23 +48,16 @@ class Solution:
         pointer.next = None
         pointer = pre
         pre = None
-        while pointer.next != None:
+        while pointer != None:
             next = pointer.next
             pointer.next = pre
             pre = pointer
             pointer = next
-        pointer.next = pre
         newpointer = head
-        while True:
+        while pre:
             next1 = newpointer.next
-            if newpointer == pointer:
-                break
-            newpointer.next = pointer
-            next2 = pointer.next
-            if pointer == next1:
-                break
-            pointer.next = next1
+            newpointer.next = pre
+            next2 = pre.next
+            pre.next = next1
             newpointer = next1
-            pointer = next2
-            if next1 == None or next2 == None:
-                break
+            pre = next2

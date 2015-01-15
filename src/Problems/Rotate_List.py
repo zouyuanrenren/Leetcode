@@ -14,6 +14,12 @@ The basic idea is that:
 4. start the slow pointer k-steps later;
 5. move the two pointers at the same time until the faster pointer reachers the tail, link it to the head;
 6. break the link after the slow pointer and return the next node.
+
+Another solution is as follows:
+1. get the length of the list, denoted by n.
+2. link the tail of the list to the head.
+3. move n-k steps. The node will be the new head.
+4. disconnect the new head from its previous node
 '''
 
 # Definition for singly-linked list.
@@ -22,7 +28,7 @@ class ListNode:
         self.val = x
         self.next = None
 
-class Solution:
+class Solution1:
     # @param head, a ListNode
     # @param k, an integer
     # @return a ListNode
@@ -49,22 +55,45 @@ class Solution:
         newhead = slow.next
         slow.next = None
         return newhead
+
+class Solution:
+    # @param head, a ListNode
+    # @param k, an integer
+    # @return a ListNode
+    def rotateRight(self, head, k):
+        n = 0
+        tempHead = ListNode(0)
+        tail = tempHead
+        tail.next = head
+        while tail.next:
+            n+=1
+            tail = tail.next
+        if n == 0:
+            return None
+        tail.next = head
+        tail = tempHead
+        for i in range(n-k%n):
+            tail = tail.next
+        newhead = tail.next
+        tail.next = None
+        return newhead
+            
     
 node1 = ListNode(1)
-node2 = ListNode(2)
-node3 = ListNode(3)
-node4 = ListNode(4)
-node5 = ListNode(5)
+# node2 = ListNode(2)
+# node3 = ListNode(3)
+# node4 = ListNode(4)
+# node5 = ListNode(5)
 
-node1.next = node2
-node2.next = node3
+# node1.next = node2
+# node2.next = node3
 # node3.next = node4
 # node4.next = node5
 
 head = node1
 
 sol = Solution()
-newHead = sol.rotateRight(head, 2)
+newHead = sol.rotateRight(head, 1)
 
 while newHead != None:
     print newHead.val,
