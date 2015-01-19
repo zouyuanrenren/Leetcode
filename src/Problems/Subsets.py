@@ -26,7 +26,8 @@ If S = [1,2,3], a solution is:
 '''
 
 '''
-This can be done with backtracking
+This can be done with backtracking.
+For each number, there is an option of including or not including it.
 '''
 
 
@@ -34,12 +35,11 @@ class Solution:
     # @param S, a list of integer
     # @return a list of lists of integer
     def subsets(self, S):
+        S.sort()
         total = []
         if S == None:
             return None
         self.addsubset(total, [], S,0)
-        for item in total:
-            item = item.sort()
         return total
     
     def addsubset(self,total,current,S,index):
@@ -51,3 +51,5 @@ class Solution:
             newcurrent2 = current[:]
             newcurrent2.append(S[index])
             self.addsubset(total, newcurrent2, S, index+1)
+            
+print Solution().subsets([1,2,3])

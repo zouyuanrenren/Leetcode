@@ -3,6 +3,18 @@ Created on 3 Jan 2015
 
 @author: Yuan
 '''
+'''
+We maintain a list of candidate words for the next line.
+    1. If adding the next word does not exceed L, then add it into the list.
+    2. Otherwise, add the current list into the result and reinitialise the candidate list with the next word.
+        a. when adding a candidate list, separate the following situations.
+            i. there is only one word, then append it with trailing spaces.
+            ii. there are multiple words, then first separate them with single spaces,
+                then increase the separation with extra spaces from left to right until reaching L
+    3. at the end, if there is any remaining words in the candidate list, 
+        append the results with these words, separated by single spaces.
+    4. if there is no results at all, add an empty line of size L.
+'''
 class Solution:
     # @param words, a list of strings
     # @param L, an integer
@@ -45,7 +57,7 @@ class Solution:
         return results
 
 sol = Solution()
-results = sol.fullJustify([""], 0) 
+results = sol.fullJustify(["This", "is", "an", "example", "of", "text", "justification."], 16) 
 for line in results:
     print line   
                     

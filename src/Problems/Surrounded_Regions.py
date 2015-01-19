@@ -3,6 +3,18 @@ Created on 3 Jan 2015
 
 @author: Yuan
 '''
+'''
+This problem can be solved by breadth-first search:
+1. we scan the matrix to find all the 'O's.
+2. when an "O" is found, we do the following:
+    1. put it into a queue
+    2. change its value to "Q" to indicate that it has been put into queue.
+    3. then for each element of the queue, we do the following
+        1. check if it is close to the boarder if it is then it is not surrounded.
+        2. check its neighbours, if a neighbour is "O", change its value to "Q" and put it into the queue.
+    4. if the queue is surrounded, change all elements to "X"
+3. change all "Q" cells back to "O". These cells are not surrounded.
+'''
 class Solution:
     # @param board, a 2D array
     # Capture all regions by modifying the input board in-place.

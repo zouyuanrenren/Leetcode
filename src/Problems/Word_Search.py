@@ -3,6 +3,13 @@ Created on 3 Jan 2015
 
 @author: Yuan
 '''
+'''
+A depth-first search problem and can be solved with backtracking.
+For each character in the matrix find out if the character can be used as the 0th character in the word.
+A character can be used as the ith character in the word IFF
+    1. it is the same as the ith character in the word.
+    2. one of its neighbours has not been used yet and can be used as the i+1th character in the word.
+'''
 class Solution:
     # @param board, a list of lists of 1 length string
     # @param word, a string
@@ -42,6 +49,6 @@ board = [
   ["S", "F", "C", "S"],
   ["A", "D", "E", "E"]
 ]
-word = "ABCB"
+word = "ABCC"
 sol = Solution()
 print sol.exist(board, word)

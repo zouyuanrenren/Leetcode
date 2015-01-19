@@ -36,7 +36,7 @@ class Solution:
                 if key == target-key:
                     return sorted(hashTable[key])[0:2]
                 else:
-                    return [min(hashTable[key][0], hashTable[target-key][0]), max(hashTable[key][0], hashTable[target-key][0])]
+                    return sorted([hashTable[key][0], hashTable[target-key][0]])
             
             
 print Solution().twoSum([0,4,3,0], 0)

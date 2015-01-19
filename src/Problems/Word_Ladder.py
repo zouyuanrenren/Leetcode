@@ -3,6 +3,16 @@ Created on 3 Jan 2015
 
 @author: Yuan
 '''
+'''
+This problem can be solved by breadth-first search:
+1. using a queue to maintain the reachable words, starting with the start;
+2. when the queue is non-empty, 
+    a. fetch the next word
+    b. change one character in this word
+        i. if it is the end, return the distance
+        ii. if it is in the dict, add it to the queue and remove it from the dict to avoid redundancy.
+3. when the queue is empty, return 0 since no ladder is found.
+'''
 class Solution:
     # @param start, a string
     # @param end, a string

@@ -29,7 +29,7 @@ To do this, we leverage the following data structures:
 2. we construct the lists[i][i] with increasing i
     a. the left child can be select from lists[m][m] with m < i
     b. the right child can be select from lists[i-m-1][i]
-3. once a list for lists[i][i] is construct, we populate the i-row of lists by increasing the value of each BST in lists[i][i]
+3. once a list for lists[i][i] is constructed, we populate the i-row of lists by increasing the value of each BST in lists[i][i]
 '''
 
 # Definition for a  binary tree node
@@ -42,14 +42,9 @@ class TreeNode:
 class Solution:
     # @return a list of tree node
     def generateTrees(self, n):
-        lists = []
-        for x in range(n+1):
-            lists.append([])
-            for y in range(n+1):
-                lists[x].append([]) 
+        lists = [[[] for i in range(n+1)] for j in range(n+1)]
         for y in range(n+1):
-            lists[0][y].append(None)
-            
+            lists[0][y].append(None)            
         for i in range(1,n+1):
             for m in range(i):
                 for leftindex in range(len(lists[m][m])):

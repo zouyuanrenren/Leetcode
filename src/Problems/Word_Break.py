@@ -3,6 +3,14 @@ Created on 3 Jan 2015
 
 @author: Yuan
 '''
+'''
+This problem can be solved with dynamic programming:
+We use a list pos to maintain the substrings that can be broken into the words in dict.
+Particularly, i in pos IFF s[:i] can be broken.
+Hence the following holds:
+1. 0 in pos;
+2. i in pos if there is some word in dict s.t. s[i-len(word):i] == word and i-len(word) in pos
+'''
 class Solution:
     # @param s, a string
     # @param dict, a set of string

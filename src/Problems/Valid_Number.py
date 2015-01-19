@@ -3,6 +3,22 @@ Created on 3 Jan 2015
 
 @author: Yuan
 '''
+'''
+The steps are as follows:
+1. strip the leading spaces;
+2. strip the leading "+"s and "-"s;
+3. split w.r.t. "e":
+    if there are more than one "e", return False
+    if there is no base, return False
+4. split the base w.r.t. ".":
+    if there are more than one ".", return False
+    if the part before and after "." are both empty, return False
+    if there is no "." and the base is empty, return False
+5. check the exponent, strip all the leading "+"s and "-"s:
+    if the remaining exponent is empty, return False
+6. for all the remaining numbers, i.e. the part before "." and after ".", the part after "e":
+    they should all be valid number sequences
+'''
 class Solution:
     # @param s, a string
     # @return a boolean
